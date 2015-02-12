@@ -10,11 +10,6 @@ namespace IsbnKata
 
         public bool IsValid(string normalizedIsbn)
         {
-            return IsValidIsbn13(normalizedIsbn);
-        }
-
-        public bool IsValidIsbn13(string normalizedIsbn)
-        {
             return ContainsValidCharacters(normalizedIsbn) && normalizedIsbn.Length == 13 && CheckSumMatchesCheckDigit(normalizedIsbn);
         }
 
