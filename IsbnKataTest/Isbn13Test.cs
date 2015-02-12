@@ -19,5 +19,12 @@ namespace IsbnKataTest
             var isbn = new Isbn("012345678912");
             Assert.IsFalse(isbn.IsValidIsbn13());
         }
+
+        [Test]
+        public void StringMoreThan13CharactersReturnsFalse()
+        {
+            var isbn = new Isbn("01234567891234");
+            Assert.IsFalse(isbn.IsValidIsbn13());
+        }
     }
 }
