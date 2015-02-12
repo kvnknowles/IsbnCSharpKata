@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="IIsbnValidator.cs" />
     <Compile Include="Isbn.cs" />
+    <Compile Include="Isbn10Validator.cs" />
     <Compile Include="Isbn13Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -13,7 +13,7 @@ namespace IsbnKata
             this._validator = validator;
         }
 
-        public bool IsValidIsbn13()
+        public bool IsValid()
         {
             return _validator.IsValid(NormalizeIsbn());
         }
