@@ -5,12 +5,12 @@ namespace IsbnKata
     public class Isbn
     {
         private readonly string _isbn;
-        private readonly Isbn13Validator _validator;
+        private readonly IIsbnValidator _validator;
 
-        public Isbn(string isbn)
+        public Isbn(string isbn, IIsbnValidator validator)
         {
             this._isbn = isbn;
-            this._validator = new Isbn13Validator();
+            this._validator = validator;
         }
 
         public bool IsValidIsbn13()
