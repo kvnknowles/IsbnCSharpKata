@@ -47,5 +47,12 @@ namespace IsbnKataTest
             var isbn = new Isbn("9A804B00C902D");
             Assert.IsFalse(isbn.IsValidIsbn13());
         }
+
+        [Test]
+        public void InvalidIsbn13ReturnsFalse()
+        {
+            var isbn = new Isbn("9780470059028");
+            Assert.IsFalse(isbn.IsValidIsbn13());
+        }
     }
 }
