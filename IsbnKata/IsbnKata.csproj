@@ -43,6 +43,7 @@
     <Compile Include="Isbn.cs" />
     <Compile Include="Isbn10Validator.cs" />
     <Compile Include="Isbn13Validator.cs" />
+    <Compile Include="IsbnHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
