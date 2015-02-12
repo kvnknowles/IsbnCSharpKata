@@ -4,6 +4,8 @@ namespace IsbnKata
 {
     public class Isbn
     {
+        private const int EvenMultiplier = 3;
+        private const int OddMultiplier = 1;
         private readonly string _isbn;
 
         public Isbn(string isbn)
@@ -35,7 +37,7 @@ namespace IsbnKata
             var checkSum = 0;
             for (var i = 1; i < 13; i++)
             {
-                var multiplier = (IsEven(i)) ? 3 : 1;
+                var multiplier = (IsEven(i)) ? EvenMultiplier : OddMultiplier;
                 checkSum += multiplier*int.Parse(normalizedIsbn[i - 1].ToString());
             }
             checkSum = (10 - (checkSum%10))%10;
