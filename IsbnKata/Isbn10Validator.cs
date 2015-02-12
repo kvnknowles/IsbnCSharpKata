@@ -29,7 +29,7 @@ namespace IsbnKata
 
         private static bool EndsInX(string normalizedIsbn)
         {
-            return normalizedIsbn.Last() == 'X';
+            return normalizedIsbn.ToUpper().Last() == 'X';
         }
 
         private static bool ContainsValidCharacters(string normalizedIsbn)
