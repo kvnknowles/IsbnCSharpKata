@@ -17,7 +17,7 @@ namespace IsbnKata
         private static bool CheckSumMatchesCheckDigit(string normalizedIsbn)
         {
             var checkDigit = -1;
-            checkDigit = normalizedIsbn.Last() == 'X' ? 10 : int.Parse(normalizedIsbn[9].ToString());
+            checkDigit = EndsInX(normalizedIsbn) ? 10 : int.Parse(normalizedIsbn[9].ToString());
             var checkSum = 0;
             for (var i = 1; i < 10; i++)
             {
@@ -27,9 +27,14 @@ namespace IsbnKata
             return checkSum == checkDigit;
         }
 
+        private static bool EndsInX(string normalizedIsbn)
+        {
+            return normalizedIsbn.Last() == 'X';
+        }
+
         private static bool ContainsValidCharacters(string normalizedIsbn)
         {
-            return IsbnHelper.ContainsOnlyDigits(normalizedIsbn.Last() == 'X' ? normalizedIsbn.Substring(0, 9) : normalizedIsbn);
+            return IsbnHelper.ContainsOnlyDigits(EndsInX(normalizedIsbn) ? normalizedIsbn.Substring(0, 9) : normalizedIsbn);
         }
     }
 }
