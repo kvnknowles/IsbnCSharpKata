@@ -13,6 +13,13 @@
         {
             var normalizedIsbn = NormalizeIsbn();
 
+            var containsValidCharacters = ContainsValidCharacters(normalizedIsbn);
+
+            return containsValidCharacters && normalizedIsbn.Length == 13;
+        }
+
+        private static bool ContainsValidCharacters(string normalizedIsbn)
+        {
             var containsValidCharacters = true;
 
             foreach (var c in normalizedIsbn)
@@ -22,8 +29,7 @@
                     containsValidCharacters = false;
                 }
             }
-
-            return containsValidCharacters && normalizedIsbn.Length == 13;
+            return containsValidCharacters;
         }
 
         private string NormalizeIsbn()
