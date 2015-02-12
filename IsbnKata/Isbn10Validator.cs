@@ -10,7 +10,12 @@ namespace IsbnKata
     {
         public bool IsValid(string normalizedIsbn)
         {
-            throw new NotImplementedException();
+            return normalizedIsbn.Length == 10 && ContainsValidCharacters(normalizedIsbn);
+        }
+
+        private static bool ContainsValidCharacters(string normalizedIsbn)
+        {
+            return normalizedIsbn.All(c => c >= '0' && c <= '9');
         }
     }
 }
