@@ -34,7 +34,12 @@ namespace IsbnKata
 
         private static bool ContainsValidCharacters(string normalizedIsbn)
         {
-            return IsbnHelper.ContainsOnlyDigits(EndsInX(normalizedIsbn) ? normalizedIsbn.Substring(0, 9) : normalizedIsbn);
+            return IsbnHelper.ContainsOnlyDigits(GetDigitsToCheck(normalizedIsbn));
+        }
+
+        private static string GetDigitsToCheck(string normalizedIsbn)
+        {
+            return EndsInX(normalizedIsbn) ? normalizedIsbn.Substring(0, 9) : normalizedIsbn;
         }
     }
 }
