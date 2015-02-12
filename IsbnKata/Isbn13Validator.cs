@@ -15,13 +15,7 @@ namespace IsbnKata
 
         public bool IsValidIsbn13(string normalizedIsbn)
         {
-            var valid = false;
-            if (ContainsValidCharacters(normalizedIsbn) && normalizedIsbn.Length == 13)
-            {
-                valid = CheckSumMatchesCheckDigit(normalizedIsbn);
-            }
-
-            return valid;
+            return ContainsValidCharacters(normalizedIsbn) && normalizedIsbn.Length == 13 && CheckSumMatchesCheckDigit(normalizedIsbn);
         }
 
         private static bool ContainsValidCharacters(string normalizedIsbn)
