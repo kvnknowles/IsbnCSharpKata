@@ -16,7 +16,8 @@ namespace IsbnKata
 
         private static bool CheckSumMatchesCheckDigit(string normalizedIsbn)
         {
-            var checkDigit = int.Parse(normalizedIsbn[9].ToString());
+            var checkDigit = -1;
+            checkDigit = normalizedIsbn.Last() == 'X' ? 10 : int.Parse(normalizedIsbn[9].ToString());
             var checkSum = 0;
             for (var i = 1; i < 10; i++)
             {
