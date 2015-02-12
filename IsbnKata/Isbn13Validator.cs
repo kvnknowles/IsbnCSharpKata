@@ -26,6 +26,11 @@ namespace IsbnKata
 
         private static bool ContainsValidCharacters(string normalizedIsbn)
         {
+            return ContainsOnlyDigits(normalizedIsbn);
+        }
+
+        private static bool ContainsOnlyDigits(string normalizedIsbn)
+        {
             return normalizedIsbn.All(c => c >= '0' && c <= '9');
         }
 
