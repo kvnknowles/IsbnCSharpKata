@@ -11,9 +11,15 @@
 
         public bool IsValidIsbn13()
         {
+            var normalizedIsbn = NormalizeIsbn();
+            return normalizedIsbn.Length == 13;
+        }
+
+        private string NormalizeIsbn()
+        {
             var normalizedIsbn = _isbn.Replace(" ", string.Empty);
             normalizedIsbn = normalizedIsbn.Replace("-", string.Empty);
-            return normalizedIsbn.Length == 13;
+            return normalizedIsbn;
         }
     }
 }
