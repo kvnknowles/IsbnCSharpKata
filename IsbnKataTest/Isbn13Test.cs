@@ -33,5 +33,12 @@ namespace IsbnKataTest
             var isbn = new Isbn("9 7 8 0 4 7 0 0 5 9 0 2 9");
             Assert.IsTrue(isbn.IsValidIsbn13());
         }
+
+        [Test]
+        public void ValidIsbn13WithDashesReturnsTrue()
+        {
+            var isbn = new Isbn("9-7-8-0-4-7-0-0-5-9-0-2-9");
+            Assert.IsTrue(isbn.IsValidIsbn13());
+        }
     }
 }
