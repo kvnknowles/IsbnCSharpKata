@@ -1,4 +1,6 @@
-﻿namespace IsbnKata
+﻿using System.Linq;
+
+namespace IsbnKata
 {
     public class Isbn
     {
@@ -20,16 +22,7 @@
 
         private static bool ContainsValidCharacters(string normalizedIsbn)
         {
-            var containsValidCharacters = true;
-
-            foreach (var c in normalizedIsbn)
-            {
-                if (c < '0' || c > '9')
-                {
-                    containsValidCharacters = false;
-                }
-            }
-            return containsValidCharacters;
+            return normalizedIsbn.All(c => c < '0' || c > '9');
         }
 
         private string NormalizeIsbn()
