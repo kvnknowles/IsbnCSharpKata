@@ -26,5 +26,12 @@ namespace IsbnKataTest
             var isbn = new Isbn("12345678901");
             Assert.IsFalse(isbn.IsValidIsbn10());
         }
+
+        [Test]
+        public void ValidIsbn10WithSpacesReturnsTrue()
+        {
+            var isbn = new Isbn("0 4 7 1 9 5 8 6 9 7");
+            Assert.IsTrue(isbn.IsValidIsbn10());
+        }
     }
 }

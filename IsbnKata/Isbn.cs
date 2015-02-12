@@ -62,7 +62,7 @@ namespace IsbnKata
 
         public bool IsValidIsbn10()
         {
-            return _isbn.Length > 9;
+            return _isbn.Length == 10;
         }
     }
 }
