@@ -15,7 +15,7 @@
 
             var containsValidCharacters = true;
 
-            foreach (char c in normalizedIsbn)
+            foreach (var c in normalizedIsbn)
             {
                 if (c < '0' || c > '9')
                 {
