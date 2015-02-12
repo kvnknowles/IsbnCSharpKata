@@ -10,7 +10,19 @@ namespace IsbnKata
     {
         public bool IsValid(string normalizedIsbn)
         {
-            return normalizedIsbn.Length == 10 && ContainsValidCharacters(normalizedIsbn);
+            return normalizedIsbn.Length == 10 && ContainsValidCharacters(normalizedIsbn) && CheckSumMatchesCheckDigit(normalizedIsbn);
+        }
+
+        private static bool CheckSumMatchesCheckDigit(string normalizedIsbn)
+        {
+            var checkDigit = int.Parse(normalizedIsbn[9].ToString());
+            var checkSum = 0;
+            for (var i = 1; i < 10; i++)
+            {
+                checkSum += i * int.Parse(normalizedIsbn[i-1].ToString());
+            }
+            checkSum = checkSum%11;
+            return checkSum == checkDigit;
         }
 
         private static bool ContainsValidCharacters(string normalizedIsbn)
