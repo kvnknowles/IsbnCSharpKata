@@ -15,9 +15,7 @@ namespace IsbnKata
         {
             var normalizedIsbn = NormalizeIsbn();
 
-            var containsValidCharacters = ContainsValidCharacters(normalizedIsbn);
-
-            return containsValidCharacters && normalizedIsbn.Length == 13;
+            return ContainsValidCharacters(normalizedIsbn) && normalizedIsbn.Length == 13;
         }
 
         private static bool ContainsValidCharacters(string normalizedIsbn)
