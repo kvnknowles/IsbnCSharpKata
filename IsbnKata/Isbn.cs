@@ -59,5 +59,10 @@ namespace IsbnKata
             var normalizedIsbn = _isbn.Replace(" ", string.Empty);
             return normalizedIsbn.Replace("-", string.Empty);
         }
+
+        public bool IsValidIsbn10()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Isbn13Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Isbn10Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
