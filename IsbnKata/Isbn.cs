@@ -35,11 +35,16 @@ namespace IsbnKata
             var checkSum = 0;
             for (var i = 1; i < 13; i++)
             {
-                var multiplier = (i%2 == 0) ? 3 : 1;
+                var multiplier = (IsEven(i)) ? 3 : 1;
                 checkSum += multiplier*int.Parse(normalizedIsbn[i - 1].ToString());
             }
             checkSum = (10 - (checkSum%10))%10;
             return checkSum;
+        }
+
+        private static bool IsEven(int i)
+        {
+            return i%2 == 0;
         }
 
         private static bool ContainsValidCharacters(string normalizedIsbn)
