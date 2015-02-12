@@ -12,7 +12,18 @@
         public bool IsValidIsbn13()
         {
             var normalizedIsbn = NormalizeIsbn();
-            return normalizedIsbn.Length == 13;
+
+            var containsValidCharacters = true;
+
+            foreach (char c in normalizedIsbn)
+            {
+                if (c < '0' || c > '9')
+                {
+                    containsValidCharacters = false;
+                }
+            }
+
+            return containsValidCharacters && normalizedIsbn.Length == 13;
         }
 
         private string NormalizeIsbn()
