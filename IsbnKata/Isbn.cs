@@ -4,8 +4,6 @@ namespace IsbnKata
 {
     public class Isbn
     {
-        private const int EvenMultiplier = 3;
-        private const int OddMultiplier = 1;
         private readonly string _isbn;
 
         public Isbn(string isbn)
