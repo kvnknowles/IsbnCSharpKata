@@ -1,4 +1,5 @@
 ISBN Kata taken from cyber-dojo.org
+Getting familiar with C#/.net again
 
 ISBN - International Standard Book Number
 -----------------------------------------
