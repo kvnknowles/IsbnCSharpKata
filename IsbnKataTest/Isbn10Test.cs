@@ -54,5 +54,12 @@ namespace IsbnKataTest
             var isbn = new Isbn("0471958698", new Isbn10Validator());
             Assert.IsFalse(isbn.IsValid());
         }
+
+        [Test]
+        public void ValidIsbn10EndingInXReturnsTrue()
+        {
+            var isbn = new Isbn("156881111X", new Isbn10Validator());
+            Assert.IsTrue(isbn.IsValid());
+        }
     }
 }
