@@ -5,15 +5,17 @@ namespace IsbnKata
     public class Isbn
     {
         private readonly string _isbn;
+        private readonly Isbn13Validator _validator;
 
         public Isbn(string isbn)
         {
             this._isbn = isbn;
+            this._validator = new Isbn13Validator();
         }
 
         public bool IsValidIsbn13()
         {
-            return new Isbn13Validator().IsValid(NormalizeIsbn());
+            return _validator.IsValid(NormalizeIsbn());
         }
 
         private static bool ContainsValidCharacters(string normalizedIsbn)
