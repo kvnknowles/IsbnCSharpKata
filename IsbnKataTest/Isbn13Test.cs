@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using IsbnKata;
+using NUnit.Framework;
 
 namespace IsbnKataTest
 {
@@ -8,6 +9,8 @@ namespace IsbnKataTest
         [Test]
         public void ValidIsbn13ReturnsTrue()
         {
+            var isbn = new Isbn("9780470059029");
+            Assert.IsTrue(isbn.IsValidIsbn13());
         }
     }
 }
