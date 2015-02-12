@@ -11,7 +11,8 @@
 
         public bool IsValidIsbn13()
         {
-            return _isbn.Length == 13;
+            var normalizedIsbn = _isbn.Replace(" ", string.Empty);
+            return normalizedIsbn.Length == 13;
         }
     }
 }
