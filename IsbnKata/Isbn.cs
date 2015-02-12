@@ -18,20 +18,10 @@ namespace IsbnKata
             return _validator.IsValid(NormalizeIsbn());
         }
 
-        private static bool ContainsValidCharacters(string normalizedIsbn)
-        {
-            return normalizedIsbn.All(c => c >= '0' && c <= '9');
-        }
-
         private string NormalizeIsbn()
         {
             var normalizedIsbn = _isbn.Replace(" ", string.Empty);
             return normalizedIsbn.Replace("-", string.Empty);
-        }
-
-        public bool IsValidIsbn10()
-        {
-            return NormalizeIsbn().Length == 10 && ContainsValidCharacters(NormalizeIsbn());
         }
     }
 }
