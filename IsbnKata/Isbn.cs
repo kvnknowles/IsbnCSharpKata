@@ -25,15 +25,21 @@ namespace IsbnKata
 
         private static bool CheckSumMatchesCheckDigit(string normalizedIsbn)
         {
-            var checkSum = 0;
             var checkDigit = int.Parse(normalizedIsbn[12].ToString());
+            var checkSum = CalculateCheckSum(normalizedIsbn);
+            return checkSum == checkDigit;
+        }
+
+        private static int CalculateCheckSum(string normalizedIsbn)
+        {
+            var checkSum = 0;
             for (var i = 1; i < 13; i++)
             {
                 var multiplier = (i%2 == 0) ? 3 : 1;
                 checkSum += multiplier*int.Parse(normalizedIsbn[i - 1].ToString());
             }
             checkSum = (10 - (checkSum%10))%10;
-            return checkSum == checkDigit;
+            return checkSum;
         }
 
         private static bool ContainsValidCharacters(string normalizedIsbn)
