@@ -47,5 +47,12 @@ namespace IsbnKataTest
             var isbn = new Isbn("0A71B586C7");
             Assert.IsFalse(isbn.IsValidIsbn10());
         }
+
+        [Test]
+        public void InvalidIsbn10ReturnsFalse()
+        {
+            var isbn = new Isbn("0471958698");
+            Assert.IsFalse(isbn.IsValidIsbn10());
+        }
     }
 }
