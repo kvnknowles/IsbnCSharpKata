@@ -48,11 +48,11 @@ namespace IsbnKataTest
             Assert.IsFalse(isbn.IsValid());
         }
 
-        /*[Test]
+        [Test]
         public void InvalidIsbn10ReturnsFalse()
         {
-            var isbn = new Isbn("0471958698");
+            var isbn = new Isbn("0471958698", new Isbn10Validator());
             Assert.IsFalse(isbn.IsValid());
-        }*/
+        }
     }
 }
