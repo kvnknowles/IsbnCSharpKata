@@ -11,7 +11,7 @@
 
         public bool IsValidIsbn13()
         {
-            return _isbn.Length > 12;
+            return _isbn.Length == 13;
         }
     }
 }
