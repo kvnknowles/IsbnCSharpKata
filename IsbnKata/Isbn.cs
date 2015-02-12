@@ -18,8 +18,7 @@
         private string NormalizeIsbn()
         {
             var normalizedIsbn = _isbn.Replace(" ", string.Empty);
-            normalizedIsbn = normalizedIsbn.Replace("-", string.Empty);
-            return normalizedIsbn;
+            return normalizedIsbn.Replace("-", string.Empty);
         }
     }
 }
